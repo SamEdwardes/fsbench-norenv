@@ -1,6 +1,19 @@
-renv::restore(packages="renv")
-renv::load()
-renv::restore()
+# Set up environment, without using renv.
+
+# Install pak. We will use it to install packages since it is faster than
+# install.packages.
+install.packages("pak")
+
+# Install all of the required packages
+pak::pkg_install(c(
+  "ggplot2",
+  "fst",
+  "data.table",
+  "vroom",
+  "R.utils",
+  "parallel"
+
+))
 
 source("_functions.R")
 
